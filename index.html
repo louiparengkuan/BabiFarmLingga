@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BABI FARM LINGGA</title>
+    
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, #ffe0e9, #ffe8f4);
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, .hero h1, .hero p, .display-5, .display-6, h5 {
+        font-family: 'Merriweather', serif;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, rgba(255, 182, 193, 0.9), rgba(249, 117, 183, 0.8)), url('img/piggy.jpg') center/cover no-repeat;
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+      }
+
+      .hero::after {
+        content: '';
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
+        animation: pulse 12s infinite;
+        z-index: 0;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.4; }
+        50% { transform: scale(1.2); opacity: 0.15; }
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .product-img {
+        max-width: 500px;
+        width: 100%;
+        border-radius: 20px;
+        margin: 2rem auto;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      .product-img:hover {
+        transform: scale(1.03);
+        filter: brightness(1.05);
+      }
+
+      .btn-primary {
+        background-color: #ff4d94;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #e60073;
+      }
+
+      .btn-outline-light {
+        border-color: #fff;
+        color: #fff;
+      }
+
+      .btn-outline-light:hover {
+        background-color: #fff;
+        color: #ff4d94;
+      }
+
+      footer {
+        background: linear-gradient(to right, #ffc4d6, #ffe6eb);
+        padding: 2rem 0;
+      }
+
+      .highlight-blog img {
+        transition: transform 0.5s ease;
+      }
+
+      .highlight-blog:hover img {
+        transform: scale(1.05);
+      }
+
+      .card, .blog-card {
+        border: 2px solid #ffd6e0;
+        background: #fff0f5;
+      }
+
+      .blog-card:hover {
+        box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+      }
+
+      .decor-left,
+      .decor-right {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 80px;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      .decor-left {
+        left: 0;
+        background: radial-gradient(circle at left, rgba(255, 182, 193, 0.3), transparent 80%);
+      }
+
+      .decor-right {
+        right: 0;
+        background: radial-gradient(circle at right, rgba(255, 105, 180, 0.3), transparent 80%);
+      }
+
+      @media (max-width: 768px) {
+        .decor-left, .decor-right {
+          display: none;
+        }
+      }
+
+      
+      /* Perbaiki agar navbar tidak sempit di tengah */
+.navbar .container {
+  max-width: 100%;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Rata tombol dan brand */
+.navbar .d-flex {
+  margin-left: auto; /* Dorong ke kanan tapi tetap dalam container */
+}
+
+/* Responsive fix agar rapih di mobile */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .navbar .d-flex {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .navbar .btn {
+    width: auto;
+    padding: 8px 16px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="decor-left"></div>
+    <div class="decor-right"></div>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">🐖 Babi Farm Lingga</a>
+        <div class="d-flex align-items-center gap-3">
+          <a href="ulasan.html" class="btn btn-outline-light btn-sm" style="z-index: 99; position: relative;">Ulasan</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-3">Peternakan Babi Berkualitas</h1>
+            <p class="lead mb-4">Babi potong & bibit unggulan dari Lingga, Kalimantan Barat. Sehat, segar, dan siap kirim ke seluruh Indonesia.</p>
+            <img src="img/babi.jpg" alt="Babi Farm" class="img-fluid rounded-4 shadow-lg mb-4 animate__animated animate__zoomIn product-img" />
+            <div>
+              <a href="mailto:babifarmlingga@gmail.com" class="btn btn-light btn-lg px-4 me-2 shadow">Hubungi Kami</a>
+              <a href="#profil" class="btn btn-outline-light btn-lg px-4">Lihat Profil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-5" id="profil">
+      <h2 class="mb-5 text-center fw-bold display-5 text-danger" data-aos="fade-up">Profil Usaha</h2>
+      <div class="card shadow-lg border-0 rounded-4 p-4 px-md-5 py-md-4 mx-auto" style="max-width: 700px;" data-aos="zoom-in">
+        <div class="mb-3"><strong>🏢 Nama Usaha:</strong> BABI FARM LINGGA</div>
+        <div class="mb-3"><strong>📍 Lokasi:</strong> Lingga, Kalimantan Barat</div>
+        <div class="mb-3"><strong>🐖 Produk:</strong> Babi Potong & Bibit</div>
+        <div><strong>📞 Kontak:</strong> 0812-XXXX-XXXX</div>
+      </div>
+    </section>
+
+    <section class="container my-5" id="blog">
+      <h2 class="mb-5 text-center fw-bold display-5 text-danger" data-aos="fade-up">📌 Sorotan Utama</h2>
+      <div class="highlight-blog position-relative rounded-4 overflow-hidden mb-5 shadow-lg" data-aos="fade-up">
+        <img src="img/highlight.jpg" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Highlight blog" style="z-index: 1; filter: brightness(0.5);" />
+        <div class="position-relative text-white p-5" style="z-index: 2;">
+          <div class="bg-dark bg-opacity-50 p-4 rounded-4">
+            <h1 class="fw-bold display-6 fst-italic mb-3">Mengapa Daging Babi dari Lingga Jadi Pilihan Favorit Konsumen Lokal?</h1>
+            <p class="lead mb-3">Di balik kualitas daging babi yang segar dan sehat, ada proses pemeliharaan yang teliti dan alami di Babi Farm Lingga...</p>
+            <a href="#" class="btn btn-light fw-semibold px-4 py-2 rounded-pill">→ Teruskan membaca</a>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mb-5 text-center fw-bold display-5 text-danger" data-aos="fade-up">📚 Blog Terbaru dari Kami</h2>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="blog-card shadow-sm rounded-4 p-4 h-100 bg-white">
+            <span class="badge text-white mb-3" style="background: linear-gradient(45deg, #ff5ea6, #ff2e7a);">Tips</span>
+            <img src="img/blog1.jpg" class="img-fluid rounded-3 mb-3" alt="daging babi" />
+            <h5 class="fw-bold mb-1">Cara Memilih Babi Potong yang Sehat dan Berkualitas</h5>
+            <small class="text-muted">📅 12 November 2025</small>
+            <p class="mt-3 text-secondary">Panduan lengkap dari warna, aroma, tekstur kulit hingga penyimpanan.</p>
+            <a href="#" class="text-decoration-none fw-semibold text-primary-emphasis">→ Terus membaca</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="400">
+          <div class="blog-card shadow-sm rounded-4 p-4 h-100 bg-white">
+            <span class="badge text-white mb-3" style="background: linear-gradient(45deg, #ff758c, #ff7eb3);">Cerita Usaha</span>
+            <img src="img/blog2.jpg" class="img-fluid rounded-3 mb-3" alt="peternakan babi" />
+            <h5 class="fw-bold mb-1">Kisah Kami: Dari Peternakan Kecil Hingga Suplai Babi untuk Kalbar</h5>
+            <small class="text-muted">📅 11 November 2025</small>
+            <p class="mt-3 text-secondary">Perjalanan inspiratif dari skala rumahan ke pemasok besar lokal.</p>
+            <a href="#" class="text-decoration-none fw-semibold text-success">→ Terus membaca</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-center my-5" data-aos="zoom-in">
+      <button onclick="kirimNotifikasi()" class="btn btn-success btn-lg">📩 SUDAH DI CEK</button>
+    </section>
+
+    <section class="text-center my-5" data-aos="zoom-in">
+      <a href="docs/PROPOSAL USAHA TERNAK BABI.pdf" download class="btn btn-success btn-lg">PROPOSAL</a>
+    </section>
+
+    <footer class="text-center">
+      <div class="container">
+        <p class="mb-0 text-muted">&copy; 2025 BABI FARM LINGGA. Semua Hak Dilindungi.</p>
+      </div>
+    </footer>
+
+    <!-- EmailJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  // Inisialisasi EmailJS setelah semua file diload
+  window.onload = function () {
+    emailjs.init("r_rFmiTkAVhFNLfaB"); // Ganti dengan public key milikmu
+  };
+
+  // Fungsi untuk kirim email
+  function kirimNotifikasi() {
+    emailjs.send("service_ymasvx6", "template_44fwxe1", {
+      subject: "Pemberitahuan Tugas",
+      message: "Tugas Anda Sudah di cek"
+    })
+    .then(function(response) {
+      alert("✅ Email berhasil dikirim!");
+    }, function(error) {
+      alert("❌ Gagal mengirim email: " + JSON.stringify(error));
+    });
+  }
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+    </script>
+  </body>
+</html>
